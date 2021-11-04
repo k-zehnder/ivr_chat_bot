@@ -1,0 +1,111 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "godo_info",
+      "patterns": [
+        "What is godo?",
+        "Goanddo",
+        "IVR",
+        "godo"
+      ],
+      "responses": [
+        "We help you on your journey towards a healthier heart!",
+        "Our IVR system is all about improving your health. Dont forget,You are great!",
+        "We are here to help you on your health journey"
+      ]
+    },
+    {
+      "tag": "find_friend",
+      "patterns": [
+        "I want to call a friend.",
+        "Is a friend available?",
+        "Im bored",
+        "Im lonely...is anyone free?",
+        "Is anyone there?",
+        "Is anyone awake to talk to?"
+      ],
+      "responses": [
+        "Would you like us to connect you to a friend?"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Which items do you have?",
+        "What is this?",
+        "What do you do?",
+        "I need help",
+        "What can you do?"
+      ],
+      "responses": [
+        "We have a menu if you would like to see the things I can help you with"
+      ]
+    },
+    {
+      "tag": "blood_pressure",
+      "patterns": [
+        "Can I log my blood pressure?",
+        "Is my blood pressure high?",
+        "What is a good blood pressure?"
+      ],
+      "responses": [
+        "We can not diagnose your blood pressure through IVR. If you dont feel well, please hang up and call 911."
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}
