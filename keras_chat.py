@@ -3,12 +3,19 @@ import json
 
 import torch
 
-from model import NeuralNet
+from keras_model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+environment_check = input("Are you in environment bot3.8?")
+if environment_check == "Y" or "y":
+    print("good")
+else:
+    print("ACTIVATE CONDA ACTIVATE bot3.8")
+
+
+with open('/home/batman/Desktop/py/ivr_chat_bot/intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
 FILE = "data.pth"

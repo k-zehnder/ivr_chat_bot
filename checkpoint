@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/batman/Desktop/py/ivr_chat_bot/model.tflearn"
+all_model_checkpoint_paths: "/home/batman/Desktop/py/ivr_chat_bot/model.tflearn"

@@ -7,7 +7,6 @@ import torch
 import torch
 import torch.nn as nn
 
-
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
         super(NeuralNet, self).__init__()
@@ -31,13 +30,11 @@ class ModelLoader:
         self.model_name = Path(model_name)
         self.model_directory = Path(model_directory)
         self.save_path = self.model_directory / self.model_name
-
         self.model = self._load_model()
 
     def _load_model(self):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"[+] Model loaded in {device} complete")
-        # model = self.model_loader.from_pretrained(f"{self.save_path}").to(device)
         FILE = "/home/batman/Desktop/py/ivr_chat_bot/data.pth"
         data = torch.load(FILE)
 
@@ -52,6 +49,10 @@ class ModelLoader:
         model.load_state_dict(model_state)
         model.eval()
 
+    def predict(self):
+        pass
+
 if __name__ == "__main__":
     ml = ModelLoader("data.pt", "/home/batman/Desktop/py/ivr_chat_bot")
     print(ml.save_path)
+    print(dir(ml.model))
