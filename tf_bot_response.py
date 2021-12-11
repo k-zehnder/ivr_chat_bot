@@ -12,15 +12,14 @@ import random
 import pickle
 
 
-
 class ModelConfig:
     def __init__(self, training_data, intents_json) -> None:
         self.training_data = training_data
         self.intents_json = intents_json
         self.data = self.restore_dsa()
-        self.model = self.load_model()
+        self.model = self.load_trained()
         
-    def load_model(self):
+    def load_trained(self):
         net = self._build_net()
         return tflearn.DNN(net, tensorboard_dir="tflearn")
     
@@ -85,11 +84,7 @@ class BotResponse(ModelConfig):
 
     def classify(self, sentence):
         # generate probabilities from the model
-        # results = self.model.predict([self.bow(sentence, self.data["words"])])[0]
-        model = self.model
-        bow = self.bow
-        words = self.data["words"]
-        results = model.predict([bow(sentence, words)])[0]
+        results = self.model.predict([self.bow(sentence, self.data["words"])])[0]
         print(results)
 
         classes = self.data["classes"]
@@ -129,11 +124,12 @@ class BotResponse(ModelConfig):
 
                 results.pop(0)
 
-bot = BotResponse('training_data', '/home/batman/Desktop/py/ivr_chat_bot/intents.json')
-print(bot)
-print(bot.bow("log my blood pressure"))
-print(bot.classify("log my blood pressure"))
-print(bot.response("log my blood pressure"))
+if __name__ == "__main__":
+    bot = BotResponse('training_data', '/home/batman/Desktop/py/ivr_chat_bot/intents.json')
+    print(bot)
+    print(bot.bow("log my blood pressure"))
+    print(bot.classify("log my blood pressure"))
+    print(bot.response("log my blood pressure"))
 
 # # p = bow("is your shop open today?", words)
 # # print (p)
